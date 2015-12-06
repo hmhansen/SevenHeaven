@@ -3,6 +3,18 @@
 		<meta charset="utf-8"/>
 		<link type="text/css" rel="stylesheet" href="app.css" />
 		<title>iTide</title>
+		<script src="http://maps.googleapis.com/maps/api/js"></script>
+		<script>
+			function initialize() {
+  			var mapProp = {
+   			center:new google.maps.LatLng(51.508742,-0.120850),
+   			zoom:5,
+    		mapTypeId:google.maps.MapTypeId.ROADMAP
+  			};
+  			var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+			}
+			google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
 	</head>
 	<body bgcolor="grey">
 		<h1>iTide</h1>
@@ -20,5 +32,7 @@
 			Din posisjon: <input type="text" name="fname"><br>
 			Din destinasjon: <input type="text" name="fname"><br>
 		</form>
+
+		<div id="googleMap" style="width:500px;height:380px;"></div>
 	</body>
 </html>
